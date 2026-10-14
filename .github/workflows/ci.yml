@@ -38,6 +38,12 @@ jobs:
       - name: Install dependencies
         run: composer install --prefer-dist --no-interaction --no-progress
 
+      - name: Run PHPCS
+        run: composer run lint
+
+      - name: Run PHPStan
+        run: composer run stan
+
       - name: Run PHPUnit
         env:
           SS_ENVIRONMENT_TYPE: dev

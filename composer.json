@@ -1,9 +1,9 @@
 {
     "name": "silvershop/product-gallery",
-    "description": "Sortable image galleries for SilverShop products and variations: data model, CMS admin with drag-sort + bulk upload, template accessors, and an overridable frontend include.",
+    "description": "Sortable media galleries for SilverShop products and variations: images plus consent-gated YouTube/Vimeo video embeds, in one sortable grid, with drag-sort + bulk upload, template accessors, and an overridable frontend include.",
     "type": "silverstripe-vendormodule",
     "license": "BSD-3-Clause",
-    "keywords": ["silverstripe", "silvershop", "ecommerce", "product", "variation", "images", "gallery"],
+    "keywords": ["silverstripe", "silvershop", "ecommerce", "product", "variation", "images", "video", "gallery"],
     "authors": [
         {
             "name": "Remy van Aartjes",
@@ -20,13 +20,23 @@
     "require-dev": {
         "phpunit/phpunit": "^11.3",
         "squizlabs/php_codesniffer": "^3.7",
-        "silverstripe/sqlite3": "^4"
+        "silverstripe/sqlite3": "^4",
+        "cambis/silverstan": "^2.1"
+    },
+    "suggest": {
+        "silvershop/cookieconsent": "Consent-gates embedded YouTube/Vimeo videos by reusing its click-to-load [consent_embed] runtime; without it the gallery falls back to a built-in click-to-load so no third-party content loads before a click."
     },
     "autoload": {
         "psr-4": {
             "SilverShop\\ProductGallery\\": "src/",
             "SilverShop\\ProductGallery\\Tests\\": "tests/php/"
         }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "stan": "vendor/bin/phpstan analyse --configuration=phpstan.neon --memory-limit=-1",
+        "lint": "vendor/bin/phpcs",
+        "lint:fix": "vendor/bin/phpcbf"
     },
     "extra": {
         "branch-alias": {

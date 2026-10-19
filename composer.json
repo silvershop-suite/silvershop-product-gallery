@@ -1,5 +1,5 @@
 {
-    "name": "silvershop/product-gallery",
+    "name": "silvershop-suite/product-gallery",
     "description": "Sortable media galleries for SilverShop products and variations: images plus consent-gated YouTube/Vimeo video embeds, in one sortable grid, with drag-sort + bulk upload, template accessors, and an overridable frontend include.",
     "type": "silverstripe-vendormodule",
     "license": "BSD-3-Clause",
@@ -28,7 +28,7 @@
         "cambis/silverstan": "^2.1"
     },
     "suggest": {
-        "silvershop/cookieconsent": "Consent-gates embedded YouTube/Vimeo videos by reusing its click-to-load [consent_embed] runtime; without it the gallery falls back to a built-in click-to-load so no third-party content loads before a click."
+        "silvershop-suite/cookieconsent": "Consent-gates embedded YouTube/Vimeo videos by reusing its click-to-load [consent_embed] runtime; without it the gallery falls back to a built-in click-to-load so no third-party content loads before a click."
     },
     "autoload": {
         "psr-4": {

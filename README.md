@@ -16,14 +16,14 @@ Rendering it yourself (see below) is pure markup — you size the images and lay
 - PHP ^8.3
 - `symbiote/silverstripe-gridfieldextensions` ^5 (drag-to-sort; pulled in by core)
 - `colymba/gridfield-bulk-editing-tools` ^5.1 (multi-file bulk upload)
-- `silvershop/cookieconsent` *(suggested, not required)* — consent-gates the video embeds through its click-to-load
+- `silvershop-suite/cookieconsent` *(suggested, not required)* — consent-gates the video embeds through its click-to-load
   runtime. Without it the gallery uses a built-in click-to-load fallback so no third-party content is fetched before an
   explicit click.
 
 ## Installation
 
 ```bash
-composer require silvershop/product-gallery
+composer require silvershop-suite/product-gallery
 ```
 
 Then run `dev/build?flush=1`.
@@ -57,7 +57,7 @@ normalised to the **privacy-enhanced** embed URL — `https://www.youtube-nocook
 Embeds are **consent-gated**. The template shows the poster with a play badge and never loads the third-party iframe
 until the visitor consents / clicks:
 
-- When `silvershop/cookieconsent` is installed, the item emits that module's `[consent_embed]` placeholder contract
+- When `silvershop-suite/cookieconsent` is installed, the item emits that module's `[consent_embed]` placeholder contract
   (`data-consent-embed` / `data-consent-category` / `data-embed-src` + Load / Always buttons), and its runtime builds
   the iframe on consent.
 - When it is absent, the module falls back to a **built-in click-to-load**: the iframe is created only on an explicit
@@ -98,7 +98,7 @@ Override the include in your theme to restyle it (lightbox / zoom / variation-sw
 <%-- Primary + gallery media, branching by kind --%>
 <% loop $AllMedia %>
     <% if $IsEmbed %>
-        <%-- consent-gate $EmbedSrc yourself, e.g. via silvershop/cookieconsent's [consent_embed] contract --%>
+        <%-- consent-gate $EmbedSrc yourself, e.g. via silvershop-suite/cookieconsent's [consent_embed] contract --%>
         <img src="$Poster.Fill(800,800).URL" alt="$Title">
     <% else %>
         <img src="$Image.Fill(800,800).URL" alt="$Title">

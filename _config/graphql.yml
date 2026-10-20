@@ -1,0 +1,15 @@
+---
+Name: silvershop-product-gallery-graphql
+Only:
+  moduleexists: 'silvershop-suite/api-graphql'
+After:
+  - '#graphql-schema-default'
+---
+# Registers this module's _graphql/ type fragment into the default schema — only when the GraphQL overlay is
+# installed, so product-gallery stays standalone. Adds Product.gallery (images, reusing ShopImage), which rides the
+# REST GalleryProductEnrichment.
+SilverStripe\GraphQL\Schema\Schema:
+  schemas:
+    default:
+      src:
+        silvershop-product-gallery: 'silvershop-suite/product-gallery: _graphql'

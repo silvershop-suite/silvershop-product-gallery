@@ -1,0 +1,11 @@
+# Re-opens the shared Product type (declared in silvershop-suite/api-graphql's _graphql/types.yml) to add the
+# `gallery` field. REUSES the overlay's existing ShopImage type (id/url/alt/width/height) — NOT redefined here.
+# SilverShop\Api\Enrichment\GalleryProductEnrichment emits $data['gallery'] as rows of {id, url, alt} (images only),
+# a subset of ShopImage's fields; width/height resolve to null for gallery rows, which is fine as all fields are
+# nullable. silverstripe/graphql merges the field into the single Product type (Type::mergeWith). Only read when the
+# overlay is installed (see _config/graphql.yml guard).
+
+# Adds Product.gallery — rides SilverShop\Api\Enrichment\GalleryProductEnrichment, reusing the overlay's ShopImage.
+Product:
+  fields:
+    gallery: '[ShopImage]'

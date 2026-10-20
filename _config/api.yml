@@ -1,0 +1,11 @@
+---
+Name: silvershop-product-gallery-api
+Only:
+  moduleexists: 'silvershop-suite/api'
+---
+# Registers this module's product media enricher onto the REST base's ProductSerializer — only when
+# silvershop-suite/api is installed, so product-gallery stays standalone. Adds a `media` array (images + privacy
+# video embeds) to the serialised product; the GraphQL Product.media field rides the same output (see _graphql/).
+SilverShop\Api\Serializer\ProductSerializer:
+  extensions:
+    - SilverShop\ProductGallery\Enrichment\GalleryMediaProductEnrichment

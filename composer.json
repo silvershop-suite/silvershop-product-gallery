@@ -25,10 +25,12 @@
         "phpunit/phpunit": "^11.3",
         "squizlabs/php_codesniffer": "^3.7",
         "silverstripe/sqlite3": "^4",
-        "cambis/silverstan": "^2.1"
+        "cambis/silverstan": "^2.1",
+        "silvershop-suite/api": "^1.0"
     },
     "suggest": {
-        "silvershop-suite/cookieconsent": "Consent-gates embedded YouTube/Vimeo videos by reusing its click-to-load [consent_embed] runtime; without it the gallery falls back to a built-in click-to-load so no third-party content loads before a click."
+        "silvershop-suite/cookieconsent": "Consent-gates embedded YouTube/Vimeo videos by reusing its click-to-load [consent_embed] runtime; without it the gallery falls back to a built-in click-to-load so no third-party content loads before a click.",
+        "silvershop-suite/api": "Exposes the gallery media (images + privacy video embeds) over the REST api/v1 product payload and, with silvershop-suite/api-graphql, over GraphQL (Product.media)."
     },
     "autoload": {
         "psr-4": {

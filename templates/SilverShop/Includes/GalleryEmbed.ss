@@ -1,4 +1,4 @@
-<%-- One embedded-video slide. Scope: an $AllMedia row of Kind video_embed. When silvershop/cookieconsent is installed
+<%-- One embedded-video slide. Scope: an $AllMedia row of Kind video_embed. When silvershop-suite/cookieconsent is installed
      ($CookieConsentAvailable) this emits that module's [consent_embed] placeholder contract (data-consent-embed /
      data-consent-category / data-embed-src + Load / Always buttons), so its runtime builds the iframe only after
      consent. When it is absent, a built-in click-to-load fallback (data-gallery-embed) is used instead. Either way the

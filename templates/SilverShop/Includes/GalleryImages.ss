@@ -2,7 +2,7 @@
      Image followed by the sorted gallery items — images and embedded YouTube/Vimeo videos; a variation with no media
      of its own falls back to its product's media). Image-only galleries render exactly as before.
 
-     Videos: an embed is shown as a poster + play badge and is consent-gated. When silvershop/cookieconsent is
+     Videos: an embed is shown as a poster + play badge and is consent-gated. When silvershop-suite/cookieconsent is
      installed the item emits that module's [consent_embed] placeholder contract (data-consent-embed …), so its runtime
      builds the iframe only after consent; when it is absent, a minimal built-in click-to-load is used instead, so no
      third-party content is fetched before an explicit click. Every slide is rendered up front (hidden ones kept in the

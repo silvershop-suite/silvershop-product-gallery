@@ -8,6 +8,12 @@ use SilverShop\Api\Enrichment\ProductEnrichmentExtension;
 use SilverShop\Page\Product;
 use SilverStripe\Assets\Image;
 
+// silvershop-suite/api is optional: without it this class stays undeclared,
+// because a flush loads every class and would fail on the missing parent.
+if (!class_exists(ProductEnrichmentExtension::class)) {
+    return;
+}
+
 /**
  * Adds a `media` array to the serialised product when silvershop-suite/product-gallery is installed: the video-aware
  * superset of the images-only `gallery` field (which stays, emitted by the api module's GalleryProductEnrichment).
